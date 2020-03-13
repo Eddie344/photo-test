@@ -1,0 +1,369 @@
+@import vars
+@import fonts
+@import libs
+
+html
+	font-size: 18px
+
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'Proxima Nova', sans-serif
+	overflow-x: hidden
+	color: $text
+
+ul
+	padding: 0
+
+li
+	list-style: none
+
+a
+	color: inherit
+	&:hover
+		color: inherit
+		text-decoration: none
+
+figure
+	margin: 0
+
+.show
+	display: block!important
+
+.btn
+	padding: 15px 30px
+	position: relative
+	transition: all 0.3s ease
+	font-weight: bold
+	font-size: 15px
+	line-height: 140%
+	text-align: center
+	letter-spacing: 1px
+	text-transform: uppercase
+	&:focus
+		outline: none
+	&::before
+		content: ""
+		opacity: 0
+		position: absolute
+		top: 30px
+		margin-left: auto
+		margin-right: auto
+		left: 0
+		right: 0
+		background: linear-gradient(110.82deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%), #F2C94C
+		filter: blur(40px)
+		width: 92px
+		height: 50px
+		transition: all 0.3s ease
+		&:hover
+			&::before
+				opacity: 1
+
+.h1
+	font-family: Gilroy, serif
+	font-size: 90px
+	font-weight: 800
+
+.h2
+	font-family: Gilroy
+	font-style: normal
+	font-weight: 800
+	font-size: 42px
+	line-height: 100%
+
+.section-h
+	display: inline-block
+	font-weight: bold
+	font-size: 18px
+	line-height: 100%
+	letter-spacing: 10px
+	text-transform: uppercase
+	color: #F2C94C
+	margin-bottom: 10px
+
+.container
+	max-width: 1340px
+	padding-right: $gutter/2
+	padding-left: $gutter/2
+	margin: 0 auto
+	height: 100%
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.header-line
+	text-align: center
+	margin-bottom: 40px
+
+.header
+	background-image: url("../img/header-bg.jpg")
+	background-repeat: no-repeat
+	background-position: center center
+	background-size: cover
+	color: #fff
+	margin-bottom: 80px
+	.header-top
+		height: 80px
+		background-image: url("../img/noize.png")
+		background-repeat: no-repeat
+		background-size: cover
+		backdrop-filter: blur(13px)
+		margin-bottom: 70px
+		.container
+			display: flex
+			justify-content: space-between
+			align-items: center
+		.top-bar-left
+			display: flex
+			.logo
+				padding-right: 30px
+				img
+					margin-right: 10px
+				.logo-text
+					font-weight: 800
+					font-size: 26px
+			.tagline
+				padding-left: 30px
+				border-left: 1px solid rgba(255, 255, 255, 0.2)
+				max-width: 140px
+				display: flex
+				align-items: center
+				p
+					margin: 0
+					font-weight: 600
+					font-size: 12px
+					color: rgba(255, 255, 255, 0.7)
+		.nav
+			ul
+				display: flex
+				margin: 0
+				li
+					&:not(:last-child)
+						margin-right: 30px
+	.header-main
+		text-align: center
+		margin-bottom: 70px
+		.h1
+			margin: 0 auto
+			max-width: 512px
+			line-height: 100%
+			margin-bottom: 30px
+		.subheader
+			margin: 0 auto
+			font-size: 26px
+			max-width: 500px
+			line-height: 140%
+			margin-bottom: 30px
+			span
+				font-family: Playfair Display, serif
+				font-weight: 700
+				font-style: italic
+				letter-spacing: -0.5px
+				text-decoration: underline
+		.main-btn
+			display: inline-block
+			padding: 20px 50px
+			background-color: #fff
+			color: #333333
+			font-weight: 700
+			font-size: 15px
+			text-transform: uppercase
+.advantages
+	.advantages-inner
+		background-image: url("../img/noize.png")
+		background-repeat: no-repeat
+		background-size: cover
+		backdrop-filter: blur(13px)
+		.advantage
+			padding: 45px 0
+			display: flex
+			justify-content: center
+			.advantage-icon
+				margin-right: 30px
+			.advantage-title
+				max-width: 250px
+				font-weight: 600
+				font-size: 18px
+				line-height: 140%
+
+.gallery
+	.tab-links
+		display: flex
+		justify-content: center
+		margin-bottom: 60px
+		.tab
+			border: 2px solid #E9E9E9
+			background-color: transparent
+			&:not(:last-child)
+				margin-right: 20px
+			&:hover
+				background: linear-gradient(114.44deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%), #F2C94C
+				border-color: transparent
+				&::before
+					opacity: 1
+		.active
+			background: linear-gradient(114.44deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%), #F2C94C
+			border-color: transparent
+			&::before
+				opacity: 1
+	.gallery-wrapper
+		margin-bottom: 50px
+		.container
+			overflow-x: auto
+
+	.photos
+		display: grid
+		grid-template-columns: repeat(15, 90px)
+		grid-template-rows: repeat(3, 280px)
+		grid-gap: 20px
+		grid-auto-flow: dense
+		.photos__img
+			width: 100%
+			height: 100%
+			object-fit: cover
+			display: block
+		.photos__item
+			position: relative
+			&:nth-child(1)
+				grid-column-start: 1
+				grid-column-end: 5
+				grid-row-start: 1
+				grid-row-end: 2
+			&:nth-child(2)
+				grid-column-start: 5
+				grid-column-end: 9
+				grid-row-start: 1
+				grid-row-end: 2
+			&:nth-child(3)
+				grid-column-start: 1
+				grid-column-end: 9
+				grid-row-start: 2
+				grid-row-end: 4
+			&:nth-child(4)
+				grid-column-start: 9
+				grid-column-end: 13
+				grid-row-start: 1
+				grid-row-end: 3
+			&:nth-child(5)
+				grid-column-start: 9
+				grid-column-end: 13
+				grid-row-start: 3
+				grid-row-end: 4
+			&:nth-child(6)
+				grid-column-start: 13
+				grid-column-end: 17
+				grid-row-start: 1
+				grid-row-end: 2
+			&:nth-child(7)
+				grid-column-start: 13
+				grid-column-end: 17
+				grid-row-start: 2
+				grid-row-end: 3
+			&:nth-child(8)
+				grid-column-start: 13
+				grid-column-end: 17
+				grid-row-start: 3
+				grid-row-end: 4
+			.hover
+				font-weight: 800
+				font-size: 15px
+				line-height: 140%
+				text-align: center
+				letter-spacing: 1px
+				text-transform: uppercase
+				position: absolute
+				top: 0
+				left: 0
+				bottom: 0
+				right: 0
+				background: linear-gradient(123.69deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%), #F2C94C
+				display: flex
+				flex-direction: column
+				justify-content: center
+				align-items: center
+				opacity: 0
+				visibility: hidden
+				transition: all 0.3s ease
+				cursor: pointer
+				.icon
+					margin-bottom: 10px
+			&:hover
+				.hover
+					opacity: 0.9
+					visibility: visible
+
+.prices
+	background-color: #202020
+	padding-top: 80px
+	padding-bottom: 80px
+	.h2
+		color: #fff
+	.header-line
+		margin-bottom: 50px
+	.prices-card
+		border: 1px solid rgba(255, 255, 255, 0.1)
+		transition: border 0.3s ease
+		&:hover
+			border-color: #FFFFFF
+		.prices-card-header
+			text-align: center
+			padding-top: 20px
+			padding-bottom: 20px
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+			.h3
+				font-family: Playfair Display
+				font-style: italic
+				font-weight: bold
+				font-size: 34px
+				line-height: 100%
+				text-align: center
+				letter-spacing: -0.5px
+				color: #F2C94C
+			span
+				font-weight: 800
+				font-size: 15px
+				line-height: 140%
+				letter-spacing: 1px
+				text-transform: uppercase
+				color: #FFFFFF
+				opacity: 0.2
+		.price-card-list
+			padding: 70px
+			font-weight: 600
+			font-size: 18px
+			line-height: 140%
+			color: #FFFFFF
+			opacity: 0.8
+			.item
+				list-style-image: url("../img/check.svg")
+				&:not(:last-child)
+					margin-bottom: 10px
+			.disable
+				list-style-image: url("../img/check-disable.svg")
+				color: #FFFFFF
+				opacity: 0.2
+		.price-card-footer
+			padding-top: 30px
+			padding-bottom: 40px
+			border-top: 1px solid rgba(255, 255, 255, 0.1)
+			text-align: center
+			.price
+				display: block
+				font-weight: 800
+				font-size: 36px
+				line-height: 100%
+				color: #FFFFFF
+				margin-bottom: 20px
+			.btn
+				display: inline-block
+				background: linear-gradient(114.44deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%), #F2C94C
+				padding-left: 70px
+				padding-right: 70px
+				&:hover
+					border-color: transparent
+					&::before
+						opacity: 1

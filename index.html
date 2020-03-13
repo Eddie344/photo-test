@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Photo</title>
+    <meta name="description" content="Photo site" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/styles.min.css" />
+  </head>
+
+  <body>
+    <div id="scene">
+      <section class="header">
+        <div class="header-top">
+          <div class="container">
+            <div class="top-bar-left">
+              <div class="logo">
+                <img src="img/logo.svg" alt="Logo" />
+                <span class="logo-text">PhotoGuide</span>
+              </div>
+              <div class="tagline">
+                <p>Stop the time - leave the memories</p>
+              </div>
+            </div>
+            <nav class="nav">
+              <ul>
+                <li><a href="">Цены и услуги</a></li>
+                <li><a href="">Контакты</a></li>
+                <li><a href="">Отзывы</a></li>
+                <li><a href="">Галерея</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="header-main">
+          <div class="container">
+            <h1 class="h1">Фотосессия в Турции</h1>
+            <p class="subheader">
+              по цене 7000 рублей за 100 фотографий и 10 одноминутных видео для
+              <span>Instagram</span>
+            </p>
+            <a href="#" class="main-btn">Связаться с фотографом</a>
+          </div>
+        </div>
+        <div class="advantages">
+          <div class="advantages-header">
+            <div class="container">
+              <h3 class="h3">Вы получаете</h3>
+            </div>
+          </div>
+          <div class="advantages-inner">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 col-12">
+                  <div class="advantage">
+                    <div class="advantage-icon">
+                      <img
+                        src="img/advantage1.svg"
+                        alt="100 обработанных фото и оригиналы"
+                      />
+                    </div>
+                    <h5 class="advantage-title">
+                      100 обработанных фото и оригиналы
+                    </h5>
+                  </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="advantage">
+                    <div class="advantage-icon">
+                      <img
+                        src="img/advantage2.svg"
+                        alt="Первые 10 фото и 1 видео в течение 24 часов"
+                      />
+                    </div>
+                    <h5 class="advantage-title">
+                      Первые 10 фото и 1 видео в течение 24 часов
+                    </h5>
+                  </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="advantage">
+                    <div class="advantage-icon">
+                      <img
+                        src="img/advantage3.svg"
+                        alt="Все фотографии через 15 дней"
+                      />
+                    </div>
+                    <h5 class="advantage-title">
+                      Все фотографии через 15 дней
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="gallery" id="app">
+      <div class="header-line">
+        <span class="section-h">Галерея</span>
+        <h2 class="h2">Мы работаем во всех стилях</h2>
+      </div>
+      <div class="tab-links" id="tabs">
+        <button
+          class="btn tab"
+          v-for="filter in filters"
+          @click="setFilter(filter.id)"
+        >
+          {{ filter.title }}
+        </button>
+      </div>
+      <div class="gallery-wrapper">
+        <div class="container">
+          <div class="photos">
+            <figure
+              class="photos__item"
+              v-for="image in images"
+              v-if="image.categories.includes(selectedFilter) "
+            >
+              <img :src="image.url" class="photos__img" alt="Image 1" />
+              <div class="hover">
+                <div class="icon">
+                  <img src="img/hover.svg" alt="" />
+                </div>
+                <span>Увеличить</span>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prices">
+      <div class="header-line">
+        <span class="section-h">Галерея</span>
+        <h2 class="h2">Мы работаем во всех стилях</h2>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-12">
+            <div class="prices-card">
+              <div class="prices-card-header">
+                <span>Пакет</span>
+                <h3 class="h3">Лёгкий</h3>
+              </div>
+              <ul class="price-card-list">
+                <li class="item">Съёмка и обработка 60 фотографий</li>
+                <li class="item">USB-флешка с фото</li>
+                <li class="item">10 одноминутных видео для Instagram</li>
+                <li class="item disable">Аренда платья на фотосессию</li>
+                <li class="item disable">Аренда квадрокоптера</li>
+                <li class="item disable">
+                  Доставка в живописные места Анталии
+                </li>
+              </ul>
+              <div class="price-card-footer">
+                <span class="price">7 000 ₽</span>
+                <a href="#" class="btn">Заказать</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="prices-card">
+              <div class="prices-card-header">
+                <span>Пакет</span>
+                <h3 class="h3">Премиум</h3>
+              </div>
+              <ul class="price-card-list">
+                <li class="item">Съёмка и обработка 60 фотографий</li>
+                <li class="item">USB-флешка с фото</li>
+                <li class="item">10 одноминутных видео для Instagram</li>
+                <li class="item">Аренда платья на фотосессию</li>
+                <li class="item">Аренда квадрокоптера</li>
+                <li class="item">Доставка в живописные места Анталии</li>
+              </ul>
+              <div class="price-card-footer">
+                <span class="price">12 000 ₽</span>
+                <a href="#" class="btn">Заказать</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="prices-card">
+              <div class="prices-card-header">
+                <span>Пакет</span>
+                <h3 class="h3">Стандарт</h3>
+              </div>
+              <ul class="price-card-list">
+                <li class="item">Съёмка и обработка 60 фотографий</li>
+                <li class="item">USB-флешка с фото</li>
+                <li class="item">10 одноминутных видео для Instagram</li>
+                <li class="item">Аренда платья на фотосессию</li>
+                <li class="item disable">Аренда квадрокоптера</li>
+                <li class="item disable">
+                  Доставка в живописные места Анталии
+                </li>
+              </ul>
+              <div class="price-card-footer">
+                <span class="price">9 000 ₽</span>
+                <a href="#" class="btn">Заказать</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/scripts.min.js"></script>
+  </body>
+</html>
